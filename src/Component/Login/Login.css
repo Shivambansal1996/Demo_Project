@@ -1,0 +1,83 @@
+.heading2{
+
+    position: absolute;
+    top: 70px;
+    left: 240px;
+}
+
+.img1{
+
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    top: 165px;
+    right: 235px;
+
+}
+
+
+.login{
+
+    background-image: linear-gradient(#344154, #383e4a, #10243c, #001029);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.lab1{
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    top: 290px;
+    right: 90px;
+    color: aliceblue;
+    font-family: inherit;
+}
+
+.lab2{
+
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    top: 333px;
+    right: 90px;
+    color: aliceblue;
+    font-family: inherit;
+}
+
+.inp1{
+
+    position: relative;
+    left: 35px;
+    width: 210px;
+    height: 34px;
+    top: 287px
+}
+
+.inp2{
+
+    position: relative;
+    left: 38px;
+    width: 210px;
+    height: 34px;
+    top: 330px
+}
+
+
+.but1{
+    position: relative;
+    width: 20%;
+    height: 55px;
+    top: 397px;
+    right: 35px;
+    background-color: darkgray;
+}
+
+.but2{
+    position: relative;
+    width: 20%;
+    height: 55px;
+    top: 397px;
+    left: 25px;
+    background-color: darkgray;
+}
