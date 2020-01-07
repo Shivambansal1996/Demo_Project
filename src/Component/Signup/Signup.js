@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Signup.css'
 import axios from 'axios'
-
+import { Field, reduxForm } from 'redux-form';
 export class Signup extends Component {
 
     constructor(props) {
@@ -18,47 +18,12 @@ export class Signup extends Component {
         }
     }
 
-    clickHandler1=(event)=>{
+    clickHandler=(event)=>{
 
         this.setState({
-           first_name :event.target.value
+           [event.target.name] : event.target.value
         })
-        event.preventDefault();
-    }
-    
-    clickHandler2=(event)=>{
 
-        this.setState({
-           last_name :event.target.value
-        })
-    }
-    
-    clickHandler3=(event)=>{
-
-        this.setState({
-           email_id :event.target.value
-        })
-    }
-    
-    clickHandler4=(event)=>{
-
-        this.setState({
-           mobile_no :event.target.value
-        })
-    }
-    
-    clickHandler5=(event)=>{
-
-        this.setState({
-           password :event.target.value
-        })
-    }
-    
-    clickHandler6=(event)=>{
-
-        this.setState({
-           confirm_password :event.target.value
-        })
     }
 
     back=()=>{
@@ -98,32 +63,32 @@ export class Signup extends Component {
 
                     <div>
                     <label className="label1">Enter First Name</label>
-                    <input className="input1" type="text" value={this.state.first_name} onChange={this.clickHandler1}></input>
+                    <Field className="input1" type="text" name="first_name" component="input" value={this.state.first_name} onChange={this.clickHandler} required></Field>
                     </div>
 
                     <div>
                     <label className="label2">Enter Last Name</label>
-                    <input className="input2" type="text" value={this.state.last_name} onChange={this.clickHandler2}></input>
+                    <Field className="input2" type="text" name="last_name" component="input" value={this.state.last_name} onChange={this.clickHandler}></Field>
                     </div>
 
                     <div>
                     <label className="label4">Enter Email id</label>
-                    <input className="input4" type="text" value={this.state.email_id} onChange={this.clickHandler3}></input>
+                    <Field className="input4" type="email" name="email_id" component="input" value={this.state.email_id} onChange={this.clickHandler}></Field>
                     </div>
 
                     <div>
                     <label className="label5">Enter Mobile No</label>
-                    <input className="input5" type="number" value={this.state.mobile_no} onChange={this.clickHandler4}></input>
+                    <Field className="input5" type="number" name="mobile_no" component="input" value={this.state.mobile_no} onChange={this.clickHandler}></Field>
                     </div>
 
                     <div>
                     <label className="label6">Enter Password</label>
-                    <input className="input6" type="text" value={this.state.password} onChange={this.clickHandler5}></input>
+                    <Field className="input6" type="text" name="password" component="input" value={this.state.password} onChange={this.clickHandler}></Field>
                     </div>
 
                     <div>
                     <label className="label7">Retype Password</label>
-                    <input className="input7" type="text" value={this.state.confirm_password} onChange={this.clickHandler6}></input>
+                    <Field className="input7" type="text" name="confirm_password" component="input" value={this.state.confirm_password} onChange={this.clickHandler}></Field>
                     </div>
 
                    <div>
@@ -136,4 +101,7 @@ export class Signup extends Component {
     }
 }
 
-export default Signup
+export default reduxForm({
+    form:'signup'
+   
+}) (Signup)

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../Login/Login.css'
 import Augmate from './Augmate.png'
 import axios from 'axios'
+import { Field, reduxForm } from 'redux-form';
 
 export class Login extends Component {
 
@@ -16,23 +17,17 @@ export class Login extends Component {
         }
     }
 
-    clickHandler1=(event)=>{
+    clickHandler=(event)=>{
 
         this.setState({
-            username:event.target.value
+            [event.target.name]:event.target.value
         })
     }
 
-    clickHandler2=(event)=>{
-
-        this.setState({
-            password:event.target.value
-        })
-    }
 
     login=(event)=>{
-        event.preventDefault();
-        alert(this.state.username+" "+ this.state.password)
+        
+        alert("Username is "+ this.state.username+" "+ "Password is " + this.state.password)
         axios.get('https://jsonplaceholder.typicode.com/posts').then(response=>{
             console.log(response)
         }).catch(error=>{
@@ -49,21 +44,26 @@ export class Login extends Component {
     render() {
         return (
             <div className='login'>
+            
+            <form >
+            
+            <div>
             <h1 className='heading2'>Sign In</h1>
             <img className='img1' src={Augmate}></img>
-            <form>
+            </div>
+
             <div>
                 <label className='lab1'>Enter Username</label>
-                <input className='inp1' type="text" value={this.state.username} onChange={this.clickHandler1}></input>
+                <Field className='inp1' type="text" name="username" component="input" value={this.state.username} onChange={this.clickHandler}></Field>
             </div>
 
             <div>
                 <label className='lab2'>Enter Password</label>
-                <input className='inp2' type="text" value={this.state.password} onChange={this.clickHandler2}></input>
+                <Field className='inp2' type="text" name="password" component="input" value={this.state.password} onChange={this.clickHandler}></Field>
             </div>
 
             <div>
-                <button onClick={this.login} className="but1" type="submit">Login</button>
+                <button onClick={this.login} disabled={!(this.state.username && this.state.password)} className="but1" type="submit">Login</button>
                 <button onClick={this.register} className="but2" type="submit">Register</button>
 
             </div>
@@ -74,4 +74,6 @@ export class Login extends Component {
     }
 }
 
-export default Login
+export default reduxForm({
+    form:'login'
+})(Login)
