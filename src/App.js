@@ -14,11 +14,10 @@ function App() {
    <Switch>
      <Route path="/" exact component={Login} />
      <Route path="/Signup" component={Signup} />
-     </Switch>
+   </Switch>
 
     </div>
     </BrowserRouter>
-  );
-}
+  )}
 
 export default App;

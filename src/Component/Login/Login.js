@@ -3,6 +3,7 @@ import '../Login/Login.css'
 import Augmate from './Augmate.png'
 import axios from 'axios'
 import { Field, reduxForm } from 'redux-form';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export class Login extends Component {
 
@@ -11,7 +12,7 @@ export class Login extends Component {
     
         this.state = {
 
-            username:'',
+            email_id:'',
             password:''
              
         }
@@ -27,6 +28,7 @@ export class Login extends Component {
 
     login=(event)=>{
         
+        event.preventDefault();
         alert("Username is "+ this.state.username+" "+ "Password is " + this.state.password)
         axios.get('https://jsonplaceholder.typicode.com/posts').then(response=>{
             console.log(response)
@@ -36,44 +38,44 @@ export class Login extends Component {
         
     }
 
-    register=()=>{
+    signUp=()=>{
 
         this.props.history.push('/Signup');
     }
     
     render() {
         return (
-            <div className='login'>
+            <div className='container' style={{position:"relative"}}>
             
-            <form >
-            
-            <div>
-            <h1 className='heading2'>Sign In</h1>
-            <img className='img1' src={Augmate}></img>
+            <div className="custom1">
+            <h1 className="font-weight-500">Login to your Account</h1>
+            <h6>Don't have an Account ? <code className="text-primary font-weight-bold" style={{cursor:"pointer"}} onClick={this.signUp}>Sign Up Free</code></h6>
             </div>
 
-            <div>
-                <label className='lab1'>Enter Username</label>
-                <Field className='inp1' type="text" name="username" component="input" value={this.state.username} onChange={this.clickHandler}></Field>
-            </div>
+            <Form className="custom2">
+             <FormGroup>
+               <Label  for="exampleEmail" className="float-left">Email id</Label>
+               <Input type="email"  name="email_id" placeholder="Email id" value={this.state.email_id} onChange={this.clickHandler} required/>
+             </FormGroup>
 
-            <div>
-                <label className='lab2'>Enter Password</label>
-                <Field className='inp2' type="text" name="password" component="input" value={this.state.password} onChange={this.clickHandler}></Field>
-            </div>
+            <FormGroup>
+             <Label for="examplePassword" className="float-left">Password</Label>
+             <Input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.clickHandler} required/>
+             </FormGroup>
 
-            <div>
-                <button onClick={this.login} disabled={!(this.state.username && this.state.password)} className="but1" type="submit">Login</button>
-                <button onClick={this.register} className="but2" type="submit">Register</button>
+            <FormGroup check className="float-left">
+             <Label check>
+             <Input type="checkbox"/>{' '}
+              Remember me
+             </Label>
+            </FormGroup>
 
-            </div>
-
-            </form>
+            <h6 className="text-primary float-right" style={{cursor:"pointer"}}>Forgot password?</h6>
+            <Button color="primary" size="lg" style={{marginTop:"55px"}} disabled={!(this.state.email_id && this.state.password)} onClick={this.login} >login with Email</Button>{' '}
+            </Form>
             </div>
         )
     }
 }
 
-export default reduxForm({
-    form:'login'
-})(Login)
+export default Login

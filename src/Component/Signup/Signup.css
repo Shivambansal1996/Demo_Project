@@ -1,167 +1,27 @@
 
-*{
-    border: 0px;
-    padding: 0px;
-}
-
-
-.form{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(#344154, #383e4a, #10243c, #001029);
+.custome1{
     position: relative;
-    margin: -22px 0 0 0
 }
 
-.input1{
-    position: relative;
-    left: 50px;
-    width: 210px;
-    height: 34px;
-    top: 18px;
-    margin-bottom: 25px;
-}
-
-.input2{
-    position: relative;
-    left: 50px;
-    width: 210px;
-    height: 34px;
-    top: 18px;
-    margin-bottom: 25px;
-}
-
-.input3{
-    position: relative;
-    left: 92px;
-    width: 210px;
-    height: 34px;
-    top: 18px;
-    margin-bottom: 25px;
-}
-
-.input4{
-    position: relative;
-    left: 60px;
-    width: 210px;
-    height: 34px;
-    top: 18px;
-    margin-bottom: 25px;
-}
-
-.input5{
-    position: relative;
-    left: 48px;
-    width: 210px;
-    height: 34px;
-    top: 18px;
-    margin-bottom: 25px;
-}
-
-.input6{
-    position: relative;
-    left: 52px;
-    width: 210px;
-    height: 34px;
-    top: 18px;
-    margin-bottom: 25px;
-}
-
-.input7{
-    position: relative;
-    left: 44px;
-    width: 210px;
-    height: 34px;
-    top: 18px;
-    margin-bottom: 25px;
+.custome2{
+    position: absolute;
+    top: 0px;
+    left: 560px;
 }
 
 
-.label1{
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    top: 16px;
-    right: 42px;
-    color: aliceblue;
-    font-family: inherit;
-}
-
-.label2{
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    top: 16px;
-    right: 42px;
-    color: aliceblue;
-    font-family: inherit;
-}
-
-.label3{
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    top: 16px;
-    right: 83px;
-    color: aliceblue;
-    font-family: inherit;
-}
-
-.label4{
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    top: 16px;
-    right: 52px;
-    color: aliceblue;
-    font-family: inherit;
-}
-
-.label5{
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    top: 16px;
-    right: 42px;
-    color: aliceblue;
-    font-family: inherit;
-}
-
-.label6{
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    top: 16px;
-    right: 47px;
-    color: aliceblue;
-    font-family: inherit;
-}
-
-.label7{
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    top: 16px;
-    right: 41px;
-    color: aliceblue;
-    font-family: inherit;
+.custome3{
+    
+        display: inline-block;
+        margin: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+        padding: 20px;
+        position: absolute;
+        margin-top: 60px;
+        left: 475px;
+    
 }
 
 
-.button1{
-    position: relative;
-    width: 20%;
-    height: 55px;
-    top: 47px;
-    right: 35px;
-    background-color: darkgray;
-}
 
-.button2{
-    position: relative;
-    width: 20%;
-    height: 55px;
-    top: 47px;
-    left: 25px;
-    background-color: darkgray;
-}

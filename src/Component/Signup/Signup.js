@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './Signup.css'
 import axios from 'axios'
-import { Field, reduxForm } from 'redux-form';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 export class Signup extends Component {
 
     constructor(props) {
@@ -31,7 +32,7 @@ export class Signup extends Component {
         this.props.history.push('/')
     }
 
-    registerData=(event)=>{
+    signUp=(event)=>{
 
          event.preventDefault();
          console.log(this.state)
@@ -56,52 +57,55 @@ export class Signup extends Component {
     
     render() {
         return (
-            <div className='form'>
-                
-                <form>
-                    <h1 style={{color: 'aliceblue', fontWeight: 'bold'}}>Registration</h1>
+            <div className="custome1">
+        
+         <div className='container'>
 
-                    <div>
-                    <label className="label1">Enter First Name</label>
-                    <Field className="input1" type="text" name="first_name" component="input" value={this.state.first_name} onChange={this.clickHandler} required></Field>
-                    </div>
+         <h1 className="custome2">Create an Account</h1>
+       
 
-                    <div>
-                    <label className="label2">Enter Last Name</label>
-                    <Field className="input2" type="text" name="last_name" component="input" value={this.state.last_name} onChange={this.clickHandler}></Field>
-                    </div>
+       <Form className="custome3">
+         <FormGroup className="custome4">
+          <Label for="exampleFirstName" className="float-left">First Name</Label>
+          <Input type="text" name="first_name" placeholder="First Name" value={this.state.first_name} onChange={this.clickHandler} required/>
+        </FormGroup>
 
-                    <div>
-                    <label className="label4">Enter Email id</label>
-                    <Field className="input4" type="email" name="email_id" component="input" value={this.state.email_id} onChange={this.clickHandler}></Field>
-                    </div>
+        <FormGroup>
+        <Label for="exampleLastName" className="float-left">Last Name</Label>
+        <Input type="text" name="last_name" placeholder="Last Name" value={this.state.last_name} onChange={this.clickHandler} required/>
+      </FormGroup>
 
-                    <div>
-                    <label className="label5">Enter Mobile No</label>
-                    <Field className="input5" type="number" name="mobile_no" component="input" value={this.state.mobile_no} onChange={this.clickHandler}></Field>
-                    </div>
+      <FormGroup>
+        <Label for="Enter Email id" className="float-left">Email</Label>
+        <Input type="email" name="email_id" placeholder="Email Id" value={this.state.email_id} onChange={this.clickHandler} required/>
+      </FormGroup>
 
-                    <div>
-                    <label className="label6">Enter Password</label>
-                    <Field className="input6" type="text" name="password" component="input" value={this.state.password} onChange={this.clickHandler}></Field>
-                    </div>
+      <FormGroup>
+        <Label for="Enter Mobile no" className="float-left">Mobile No</Label>
+        <Input type="text" name="mobile_no" placeholder="Mobile No" value={this.state.mobile_no} onChange={this.clickHandler} required/>
+      </FormGroup>
 
-                    <div>
-                    <label className="label7">Retype Password</label>
-                    <Field className="input7" type="text" name="confirm_password" component="input" value={this.state.confirm_password} onChange={this.clickHandler}></Field>
-                    </div>
+      <FormGroup>
+        <Label for="examplePassword" className="float-left">Password</Label>
+        <Input type="password" name="password"  placeholder="Password" value={this.state.password} onChange={this.clickHandler} required/>
+      </FormGroup>
 
-                   <div>
-                       <button className='button1' disabled={!(this.state.first_name && this.state.last_name && this.state.email_id && this.state.mobile_no && this.state.password && this.state.confirm_password)} onClick={this.registerData} type="submit">Register</button>
-                       <button onClick={this.back} className='button2' type="submit" >Back</button>
-                   </div>
-                </form>
-            </div>
+      <FormGroup>
+        <Label for="examplePassword" className="float-left">Confirm Password</Label>
+        <Input type="password" name="confirm_password"  placeholder="Confirm Password" value={this.state.confirm_password} onChange={this.clickHandler} required/>
+      </FormGroup>
+
+      <h6 className="font-weight-normal text-left">By creating an account, you agree to our <code className="text-primary font-weight-bold">Terms & Conditions</code></h6>
+      <Button style={{marginTop:"5px"}} color="primary" size="lg" disabled={!(this.state.first_name && this.state.last_name && this.state.email_id && this.state.mobile_no && this.state.password && this.state.confirm_password)} onClick={this.signUp} >Create an Account</Button>{' '}
+      <hr></hr>
+                <h6 className="font-weight-normal">Already have an Account? <code style={{cursor:"pointer"}} onClick={this.back} className="text-primary font-weight-bold">Sign In!</code></h6>
+        
+      
+      </Form>   
+                 </div>
+         </div>
         )
     }
 }
 
-export default reduxForm({
-    form:'signup'
-   
-}) (Signup)
+export default Signup
