@@ -2,8 +2,10 @@
 
 .custom1{
     position: absolute;
-    margin-top: 140px;
-     left: 270px;
+    margin-top: -712px;
+    margin-left: 317px;
+    color: whitesmoke;
+ 
     }
 
 .custom2{
@@ -13,9 +15,17 @@
     box-shadow: 0 2px 2px #ccc;
     padding: 20px;
     position: absolute;
-    margin-top: 250px;
-    left: 240px;
+    margin-top: -620px;
+    left: 302px;
+    background-color: white;
 }
+
+.custome4{
+    text-align: left;
+    color: red;
+}
+
+
 
 
 

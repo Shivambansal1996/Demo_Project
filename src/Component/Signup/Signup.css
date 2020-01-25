@@ -3,11 +3,6 @@
     position: relative;
 }
 
-.custome2{
-    position: absolute;
-    top: 0px;
-    left: 560px;
-}
 
 
 .custome3{
@@ -18,10 +13,24 @@
         box-shadow: 0 2px 2px #ccc;
         padding: 20px;
         position: absolute;
-        margin-top: 60px;
+        margin-top: -783px;
         left: 475px;
-    
+        background-color: white;
+         width: 33%;
 }
 
+.custome4{
+    text-align: left;
+    color: red;
+}
+
+.custome5{
+    
+    position: absolute;
+    margin-top: -868px;
+    margin-left: 548px;
+    color: whitesmoke;
+
+}
 
 
